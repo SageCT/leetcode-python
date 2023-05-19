@@ -15,7 +15,3 @@ class Solution:
             res[i] *= postfix
             postfix *= nums[i]
         return res
-
-
-nums = [1, 2, 3, 4]
-print(Solution().productExceptSelf(nums))
