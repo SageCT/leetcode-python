@@ -21,4 +21,16 @@ class Solution:
                     ansLen = r - l + 1
                 l -= 1
                 r += 1
+
+        # ? More concise solution, less intiutive though
+        # for i in range(len(s)):
+        #     for j in range(2):
+        #         l, r = i, i + j
+        #         while l >= 0 and r < len(s) and s[l] == s[r]:
+        #             if (r - l + 1) > ansLen:
+        #                 ans = s[l : r + 1]
+        #                 ansLen = r - l + 1
+        #         l -= 1
+        #         r += 1
+
         return ans
