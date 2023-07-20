@@ -3,7 +3,7 @@ from typing import List
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        stack: str = []
+        stack = []
         checker = {")": "(", "]": "[", "}": "{"}
         for c in s:
             if c in checker:
