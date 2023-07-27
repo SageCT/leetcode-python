@@ -7,6 +7,7 @@ class Solution:
         checker = {")": "(", "]": "[", "}": "{"}
         for c in s:
             if c in checker:
+                # ? stack[-1] is the top of the stack (python is weird)
                 if stack and stack[-1] == checker[c]:
                     stack.pop()
                 else:
