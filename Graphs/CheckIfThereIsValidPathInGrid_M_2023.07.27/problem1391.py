@@ -19,7 +19,7 @@ class Solution:
             if i == len(grid) - 1 and j == len(grid[0]) - 1:
                 return True
 
-            # ? We can go up, down, left, or right. Traverse each direction
+            # ? We can go up, down, left, or right. Traverse each direction.
             # ! k, l are the current row and col. i and j are the next col and row.
             for k, l, d in [
                 (i - 1, j, up),
@@ -27,6 +27,10 @@ class Solution:
                 (i, j - 1, left),
                 (i, j + 1, right),
             ]:
+                # ? because we preemptively switch visited to neg (see line 11)
+                # ? we check to see if the current node was visited (-grid[i][j] in d)
+                # ? we also check if the node direction is in the directions of the visited node
+                # ? (grid[k][l] in d[-grid[i][j]])
                 if (
                     0 <= k < len(grid)
                     and 0 <= l < len(grid[0])
