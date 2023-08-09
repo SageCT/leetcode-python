@@ -11,6 +11,7 @@ class Solution:
         islands = 0
 
         def bfs(r, c):
+            # * Create a deque (queues are for bfs) and add the first element
             q = collections.deque()
             visit.add((r, c))
             q.append((r, c))
@@ -20,6 +21,8 @@ class Solution:
                 directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
 
                 for dr, dc in directions:
+                    # * r,c is the current position
+                    # * dr, dc are the directions you're checking
                     r, c = row + dr, col + dc
                     if (
                         r in range(rows)
@@ -32,6 +35,7 @@ class Solution:
 
         for r in range(rows):
             for c in range(cols):
+                # * If you hit a one, then you have found an island
                 if grid[r][c] == "1" and (r, c) not in visit:
                     bfs(r, c)
                     islands += 1

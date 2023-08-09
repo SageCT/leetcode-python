@@ -1,3 +1,6 @@
+import bisect
+
+
 class Solution:
     def waysToSplit(self, nums: List[int]) -> int:
         # approach 1: prefix sum + binary search
